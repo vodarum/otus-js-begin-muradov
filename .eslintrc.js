@@ -16,8 +16,14 @@ module.exports = {
     "max-len": [
       "error",
       {
+        code: 100,
         ignoreComments: true,
+        ignoreRegExpLiterals: true,
       },
     ],
+    "no-alert": "off",
+    "no-console": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
   },
 };
