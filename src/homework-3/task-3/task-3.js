@@ -8,15 +8,11 @@ function promptPositiveNumber() {
 }
 
 function echoAvgOfOddNum(num) {
-  let [min, oddNumCount, sum] = [1, 0, 0];
+  let [oddNumCount, sum] = [0, 0];
 
-  while (min <= num) {
-    if (min % 2 !== 0) {
-      sum += min;
-      oddNumCount++;
-    }
-
-    min++;
+  for (let i = 1; i <= num; i += 2) {
+    sum += i;
+    oddNumCount++;
   }
 
   console.log(sum / oddNumCount);

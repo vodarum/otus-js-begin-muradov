@@ -6,13 +6,11 @@ function createArray(...items) {
 }
 
 function echoSumItemsOfArray(array) {
-  let sum = 0;
+  const result = array.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  );
 
-  for (let i = 0, { length } = array; i < length; i++) {
-    sum += array[i];
-  }
-
-  console.log(sum);
+  console.log(result);
 }
 
 export { createArray, echoSumItemsOfArray };

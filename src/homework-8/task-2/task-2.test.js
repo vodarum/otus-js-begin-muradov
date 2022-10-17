@@ -1,28 +1,29 @@
 import { echoNumOfMinutesFromStartCurrentDay } from "./task-2";
 
 describe("echoNumOfMinutesFromStartCurrentDay", () => {
-  function getNumOfMinutesFromStartCurrentDay() {
-    const now = new Date();
-    const startCurrentDay = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate()
-    );
-    const diffMilliseconds = now.getTime() - startCurrentDay.getTime();
+  const testData = [
+    { date: "2022-10-17 12:09:45", result: 729 },
+    { date: "2022-10-17 01:45:02", result: 105 },
+    { date: "2022-10-17 00:00:23", result: 0 },
+  ];
 
-    return Math.floor(diffMilliseconds / (1000 * 60));
-  }
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("is function", () => {
     expect(echoNumOfMinutesFromStartCurrentDay).toBeInstanceOf(Function);
   });
 
-  it("correct num of minutes form start current day", () => {
-    const spyLog = jest.spyOn(console, "log");
-    const numOfMinutes = getNumOfMinutesFromStartCurrentDay();
+  testData.forEach(({ date, result }) => {
+    it("correct num of minutes form start current day", () => {
+      const spyLog = jest.spyOn(console, "log");
 
-    echoNumOfMinutesFromStartCurrentDay();
+      jest.useFakeTimers().setSystemTime(new Date(date));
 
-    expect(spyLog).toHaveBeenCalledWith(numOfMinutes);
+      echoNumOfMinutesFromStartCurrentDay();
+
+      expect(spyLog).toHaveBeenCalledWith(result);
+    });
   });
 });

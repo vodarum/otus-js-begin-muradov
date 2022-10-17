@@ -7,6 +7,7 @@ export function echoMinAndMAxItemsOfArray(array) {
   for (let i = 0, { length } = array; i < length; i++) {
     if (min > array[i]) {
       min = array[i];
+      continue;
     }
 
     if (max < array[i]) {

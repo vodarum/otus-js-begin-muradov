@@ -2,9 +2,9 @@
 // значение числа a, возведённого в степень x.
 
 export function pow(a, x) {
-  let result = 1;
+  let result = a;
 
-  for (let i = 1; i <= x; i++) {
+  for (let i = 2; i <= x; i++) {
     result *= a;
   }
 

@@ -3,5 +3,5 @@
 // строка состоит из одного слова, и false, если из нескольких.
 
 export function isWord(str) {
-  return str.split(" ").length === 1;
+  return str.trim().split(" ").length === 1;
 }

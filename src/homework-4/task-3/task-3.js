@@ -16,6 +16,6 @@ const admin = { ...user };
 admin.putProp("name", "admin");
 admin.putProp("role", "admin");
 
-const [name, role] = [admin.name, admin.role];
+const { name, role } = admin;
 
 export { admin, name, role };

@@ -6,14 +6,13 @@ function promptThreeDigitNumber() {
   return prompt("Enter a three-digit number: ");
 }
 
-function echoSumFromThreeDigitNumber(threeDigitNumberAsString) {
-  const threeDigitNumberAsArray = threeDigitNumberAsString.split("");
-
-  console.log(
-    +threeDigitNumberAsArray[0] +
-      +threeDigitNumberAsArray[1] +
-      +threeDigitNumberAsArray[2]
+function echoSumFromThreeDigitNumber(numberAsString) {
+  const numberAsArray = numberAsString.trim().split("");
+  const result = numberAsArray.reduce(
+    (accumulator, currentValue) => +accumulator + +currentValue
   );
+
+  console.log(result);
 }
 
 export { promptThreeDigitNumber, echoSumFromThreeDigitNumber };
